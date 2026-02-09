@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-en="Baraa Cheddad | Creative Portfolio" data-ar="براء شداد | ملف إبداعي">Baraa Cheddad | Creative Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌟</text></svg>">
+<style>
+    .lang-switcher {
+    display: inline-flex;
+    margin-left: 10px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    background: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ }
+
+ .lang-btn {
+    padding: 8px 16px;
+    border: none;
+    background: transparent;
+    color: #555;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+ }
+
+ .lang-btn.active {
+    background: linear-gradient(135deg, #6C63FF, #36D1DC);
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+ }
+
+ .lang-btn:hover:not(.active) {
+    background: #f5f5f5;
+    color: #007bff;
+ }
+
+ .lang-btn:not(:last-child) {
+    border-right: 1px solid #ddd;
+ }
+ /* MOBILE LANGUAGE SWITCHER */
+ @media (max-width: 768px) {
+     .header-actions .lang-switcher {
+        display: none; /* نخفيها فالهيدر */
+    }
+ }
+ .mobile-lang-switcher {
+    display: flex;
+    justify-content: center;
+    margin: 15px 0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.15);
+    background: var(--lang-switcher-bg, #fff); /* يدعم dark/light */
+    width: 90%; /* أكبر شوي */
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+ }
+
+ /* الأزرار */
+ .mobile-lang-switcher .lang-btn {
+    flex: 1;
+    text-align: center;
+    padding: 10px 0; /* أكبر شوي */
+    font-size: 15px; /* أكبر شوي */
+    font-weight: 600;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    color: var(--lang-btn-color, #555); /* يدعم dark/light */
+    transition: all 0.3s ease;
+ }
+
+ /* زر active */
+ .mobile-lang-switcher .lang-btn.active {
+    background: linear-gradient(135deg, #6C63FF, #36D1DC);
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+ }
+
+ /* hover effect */
+ .mobile-lang-switcher .lang-btn:hover:not(.active) {
+    background: #f0f0f0;
+    color: #007bff;
+ }
+
+ /* حدود بين الأزرار */
+ .mobile-lang-switcher .lang-btn:not(:last-child) {
+    border-right: 1px solid #ddd;
+ }
+
+ /* RTL support */
+ [dir="rtl"] .mobile-lang-switcher .lang-btn:not(:last-child) {
+    border-right: none;
+    border-left: 1px solid #ddd;
+ }
+
+ /* DARK MODE support */
+ body.dark-mode .mobile-lang-switcher {
+    --lang-switcher-bg: #1f1f1f;
+ }
+
+ body.dark-mode .mobile-lang-switcher .lang-btn {
+    --lang-btn-color: #ccc;
+ }
+
+ body.dark-mode .mobile-lang-switcher .lang-btn:hover:not(.active) {
+    background: #333;
+    color: #6C63FF;
+ }
+
+
+
+    </style>
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header id="header">
+        <div class="container">
+            <nav class="nav-container">
+                <a href="#hero" class="logo">
+                    <i class="fas fa-sparkles"></i>
+                    <span data-en="Baraa" data-ar="براء">Baraa</span>
+                </a>
+                
+                <div class="nav-links">
+                    <a href="#hero" data-en="Home" data-ar="الرئيسية">Home</a>
+                    <a href="#about" data-en="About" data-ar="من أنا">About</a>
+                    <a href="#experience" data-en="Experience" data-ar="الخبرات">Experience</a>
+                    <a href="#skills" data-en="Skills" data-ar="المهارات">Skills</a>
+                    <a href="#achievements" data-en="Achievements" data-ar="الإنجازات">Achievements</a>
+                    <a href="#contact" data-en="Contact" data-ar="اتصل بي">Contact</a>
+                </div>
+                
+                <div class="header-actions">
+                    <div class="lang-switcher">
+                        <button class="lang-btn active" data-lang="en">EN</button>
+                        <button class="lang-btn" data-lang="ar">AR</button>
+                    </div>
+                    
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark/light mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    
+                    <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Toggle mobile menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu">
+            <div class="mobile-menu-content">
+                <a href="#hero" class="mobile-nav-link" data-en="Home" data-ar="الرئيسية">Home</a>
+                <a href="#about" class="mobile-nav-link" data-en="About" data-ar="من أنا">About</a>
+                <a href="#experience" class="mobile-nav-link" data-en="Experience" data-ar="الخبرات">Experience</a>
+                <a href="#skills" class="mobile-nav-link" data-en="Skills" data-ar="المهارات">Skills</a>
+                <a href="#achievements" class="mobile-nav-link" data-en="Achievements" data-ar="الإنجازات">Achievements</a>
+                <a href="#contact" class="mobile-nav-link" data-en="Contact" data-ar="اتصل بي">Contact</a>
+                 <div class="mobile-lang-switcher">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="ar">AR</button>
+    </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title" data-en="Hello, I'm <span class='highlight'>Baraa Cheddad</span>" data-ar="مرحبًا، أنا <span class='highlight'>براء شداد</span>">
+                        Hello, I'm <span class="highlight">Baraa Cheddad</span>
+                    </h1>
+                    <p class="hero-subtitle" data-en="Passionate about education, creativity, and technology with diverse experiences in childcare, AI, and creative arts." data-ar="شغوف بالتعليم، والإبداع، والتكنولوجيا. لدي خبرات متنوعة في رعاية الأطفال، الذكاء الاصطناعي، والفنون الإبداعية.">
+                        Passionate about education, creativity, and technology. 
+                        with diverse 
+                        experiences in childcare, AI, and creative arts.
+                    </p>
+                    
+                    <div class="contact-cards">
+                        <div class="contact-card">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4 data-en="Phone" data-ar="الهاتف">Phone</h4>
+                                <p>+213 664 10 15 37</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-card">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4 data-en="Email" data-ar="البريد الإلكتروني">Email</h4>
+                                <p>manarcheddad@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hero-illustration">
+                    <div class="illustration-card">
+                        <div class="card-bg"></div>
+                        <div class="card-content">
+                            <div class="avatar">
+                                <div class="avatar-icon">BC</div>
+                            </div>
+                            <h3 data-en="Creative Innovator" data-ar="مبتكر إبداعي">Creative Innovator</h3>
+                            <p data-en="Education & Technology Enthusiast" data-ar="متحمس للتعليم والتكنولوجيا">Education & Technology Enthusiast</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Floating icons -->
+                    <div class="floating-icons"> 
+                        <div class="floating-icon" style="animation-delay: 0s;">
+                            <i class="fas fa-child"></i>
+                        </div>
+                        <div class="floating-icon" style="animation-delay: 1s;">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="floating-icon" style="animation-delay: 2s;">
+                            <i class="fas fa-camera"></i>
+                        </div>
+                        <div class="floating-icon" style="animation-delay: 3s;">
+                            <i class="fas fa-microphone"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+        <div class="container">
+            <h2 class="section-title" data-en="About Me" data-ar="من أنا">About Me</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <div class="image-container">
+                        <div class="image-container">
+                            <div class="image-frame">
+                                <img src="image2.png" alt="Creative & Dedicated Student Illustration" style="width:100%; height:100%; object-fit:cover; border-radius:inherit;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-text">
+                    <h3 data-en="Creative & Dedicated Student" data-ar="طالب مبدع ومتفانٍ">Creative & Dedicated Student</h3>
+                    <p data-en="I'm passionate about combining learning with technology. My experiences range from childcare to artificial intelligence, with a creative touch in content creation and design." data-ar="أنا شغوف بدمج التعلم مع التكنولوجيا. خبراتي تتراوح من رعاية الأطفال إلى الذكاء الاصطناعي، مع لمسة إبداعية في إنشاء المحتوى والتصميم.">
+                        I'm passionate about combining learning with technology. My experiences range from childcare to artificial intelligence, with a creative touch in content creation and design.
+                    </p>
+                    
+                    <div class="info-cards">
+                        <div class="info-card">
+                            <h4 data-en="Education" data-ar="التعليم">Education</h4>
+                            <p data-en="Third Year Secondary School" data-ar="السنة الثالثة ثانوي">Third Year Secondary School</p>
+                        </div>
+                        
+                        <div class="info-card">
+                            <h4 data-en="Location" data-ar="الموقع">Location</h4>
+                            <p data-en="Algeria" data-ar="الجزائر">Algeria</p>
+                        </div>
+                    </div>
+                    
+                    <div class="about-highlights">
+                        <div class="highlight-item">
+                            <i class="fas fa-heart"></i>
+                            <span data-en="Passionate about education" data-ar="شغوف بالتعليم">Passionate about education</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-lightbulb"></i>
+                            <span data-en="Creative problem solver" data-ar="حل مشكلات إبداعي">Creative problem solver</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-users"></i>
+                            <span data-en="Team player" data-ar="لاعب فريق">Team player</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience & Timeline -->
+    <section id="experience" class="experience section">
+        <div class="container">
+            <h2 class="section-title" data-en="Experience & Training" data-ar="الخبرات والتدريب">Experience & Training</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date" data-en="2023 - Present" data-ar="2023 - الآن">2023 - Present</div>
+                    <div class="timeline-content">
+                        <h3 data-en="Garment Pattern Making & Clothing Design" data-ar="صنع أنماط الملابس وتصميم الأزياء">Garment Pattern Making & Clothing Design</h3>
+                        <p data-en="Certificate in Garment Pattern Making and Clothing Design" data-ar="شهادة في صنع أنماط الملابس وتصميم الأزياء">Certificate in Garment Pattern Making and Clothing Design</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date" data-en="2023 - Present" data-ar="2023 - الآن">2023 - Present</div>
+                    <div class="timeline-content">
+                        <h3 data-en="Seen Center for Artificial Intelligence" data-ar="مركز سين للذكاء الاصطناعي">Seen Center for Artificial Intelligence</h3>
+                        <p data-en="Participant at Seen Center for Artificial Intelligence, exploring AI fundamentals and applications" data-ar="مشارك في مركز سين للذكاء الاصطناعي، أستكشف أساسيات وتطبيقات الذكاء الاصطناعي">Participant at Seen Center for Artificial Intelligence, exploring AI fundamentals and applications</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date" data-en="2022 - Present" data-ar="2022 - الآن">2022 - Present</div>
+                    <div class="timeline-content">
+                        <h3 data-en="Kindergarten / Childcare" data-ar="رياض الأطفال / رعاية الأطفال">Kindergarten / Childcare</h3>
+                        <p data-en="1.5 years experience working with young children, focusing on educational play and development" data-ar="سنة ونصف من الخبرة في العمل مع الأطفال الصغار، مع التركيز على اللعب التعليمي والتطور">1.5 years experience working with young children, focusing on educational play and development</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date" data-en="2022 - Present" data-ar="2022 - الآن">2022 - Present</div>
+                    <div class="timeline-content">
+                        <h3 data-en="Project Management" data-ar="إدارة المشاريع">Project Management</h3>
+                        <p data-en="Experience in organizing and managing educational projects for children" data-ar="خبرة في تنظيم وإدارة المشاريع التعليمية للأطفال">Experience in organizing and managing educational projects for children</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills & Languages -->
+    <section id="skills" class="skills section">
+        <div class="container">
+            <h2 class="section-title" data-en="Skills & Languages" data-ar="المهارات واللغات">Skills & Languages</h2>
+            
+            <div class="skills-grid">
+                <div class="skills-category">
+                    <h3 data-en="Professional Skills" data-ar="المهارات المهنية">Professional Skills</h3>
+                    
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <i class="fas fa-child"></i>
+                            <h4 data-en="Childcare & Education" data-ar="رعاية الأطفال والتعليم">Childcare & Education</h4>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 95%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <i class="fas fa-project-diagram"></i>
+                            <h4 data-en="Project Management" data-ar="إدارة المشاريع">Project Management</h4>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <i class="fas fa-camera"></i>
+                            <h4 data-en="Digital Content Creation" data-ar="إنشاء المحتوى الرقمي">Digital Content Creation</h4>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <i class="fas fa-robot"></i>
+                            <h4 data-en="AI & Technology" data-ar="الذكاء الاصطناعي والتكنولوجيا">AI & Technology</h4>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 70%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skills-category">
+                    <h3 data-en="Languages" data-ar="اللغات">Languages</h3>
+                    
+                    <div class="language-item">
+                        <div class="language-header">
+                            <h4 data-en="Arabic" data-ar="العربية">Arabic</h4>
+                            <span data-en="Native" data-ar="اللغة الأم">Native</span>
+                        </div>
+                        <div class="language-bar">
+                            <div class="language-progress" style="width: 100%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="language-item">
+                        <div class="language-header">
+                            <h4 data-en="French" data-ar="الفرنسية">French</h4>
+                            <span data-en="Intermediate" data-ar="متوسط">Intermediate</span>
+                        </div>
+                        <div class="language-bar">
+                            <div class="language-progress" style="width: 66%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="language-item">
+                        <div class="language-header">
+                            <h4 data-en="English" data-ar="الإنجليزية">English</h4>
+                            <span data-en="Intermediate" data-ar="متوسط">Intermediate</span>
+                        </div>
+                        <div class="language-bar">
+                            <div class="language-progress" style="width: 66%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skills-extra">
+                        <h4 data-en="Additional Skills" data-ar="مهارات إضافية">Additional Skills</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag" data-en="Traditional Pastry" data-ar="الحلويات التقليدية">Traditional Pastry</span>
+                            <span class="skill-tag" data-en="Modern Pastry" data-ar="الحلويات الحديثة">Modern Pastry</span>
+                            <span class="skill-tag" data-en="Voice-over (MSA)" data-ar="التعليق الصوتي (الفصحى)">Voice-over (MSA)</span>
+                            <span class="skill-tag" data-en="Photography" data-ar="التصوير الفوتوغرافي">Photography</span>
+                            <span class="skill-tag" data-en="Teaching through Play" data-ar="التعليم من خلال اللعب">Teaching through Play</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements & Goals -->
+    <section id="achievements" class="achievements section">
+        <div class="container">
+            <h2 class="section-title" data-en="Achievements & Goals" data-ar="الإنجازات والأهداف">Achievements & Goals</h2>
+            
+            <div class="achievements-grid">
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3 data-en="Arab Reading Challenge Champion 2022" data-ar="بطل تحدي القراءة العربي 2022">Arab Reading Challenge Champion 2022</h3>
+                    <p data-en="Won the prestigious Arab Reading Challenge, demonstrating exceptional reading and comprehension skills" data-ar="فزت بتحدي القراءة العربي المرموق، مما يظهر مهارات استثنائية في القراءة والاستيعاب">Won the prestigious Arab Reading Challenge, demonstrating exceptional reading and comprehension skills</p>
+                </div>
+                
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i class="fas fa-newspaper"></i>
+                    </div>
+                    <h3 data-en="Young Journalist Club" data-ar="نادي الصحفيين الصغار">Young Journalist Club</h3>
+                    <p data-en="Goal: Establish a 'Young Journalist Club' for children to develop media and communication skills" data-ar="الهدف: تأسيس 'نادي الصحفيين الصغار' للأطفال لتطوير مهارات الإعلام والاتصال">Goal: Establish a "Young Journalist Club" for children to develop media and communication skills</p>
+                </div>
+                
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3 data-en="AI Education Platform" data-ar="منصة تعليم الذكاء الاصطناعي">AI Education Platform</h3>
+                    <p data-en="Goal: Create an educational platform focused on Artificial Intelligence for young learners" data-ar="الهدف: إنشاء منصة تعليمية تركز على الذكاء الاصطناعي للمتعلمين الصغار">Goal: Create an educational platform focused on Artificial Intelligence for young learners</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo">
+                        <i class="fas fa-sparkles"></i>
+                        <span data-en="Baraa Cheddad" data-ar="براء شداد">Baraa Cheddad</span>
+                    </div>
+                    <p data-en="Creative student passionate about education, technology, and innovation" data-ar="طالب مبدع شغوف بالتعليم والتكنولوجيا والابتكار">Creative student passionate about education, technology, and innovation</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4 data-en="Quick Links" data-ar="روابط سريعة">Quick Links</h4>
+                    <a href="#hero" data-en="Home" data-ar="الرئيسية">Home</a>
+                    <a href="#about" data-en="About" data-ar="من أنا">About</a>
+                    <a href="#experience" data-en="Experience" data-ar="الخبرات">Experience</a>
+                    <a href="#skills" data-en="Skills" data-ar="المهارات">Skills</a>
+                    <a href="#achievements" data-en="Achievements" data-ar="الإنجازات">Achievements</a>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4 data-en="Contact Me" data-ar="اتصل بي">Contact Me</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> +213 664 10 15 37</p>
+                        <p><i class="fas fa-envelope"></i> manarcheddad@gmail.com</p>
+                    </div>
+                    
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/amine-mohamed-78b68b349/" class="social-icon" aria-label="LinkedIn" target="_blank">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        
+                        <a href="#" class="social-icon" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://wa.me/213542857253?text=Hello%2C%20I%E2%80%99m%20interested%20in%20working%20with%20you"
+                           class="whatsapp-float"
+                           target="_blank"
+                           aria-label="Contact on WhatsApp">
+                           <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p data-en="&copy; 2026 ( Amine & Ahmed ). All rights reserved." data-ar="&copy; 2026 ( أمين وأحمد ). جميع الحقوق محفوظة.">&copy; 2026 ( Amine & Ahmed ). All rights reserved.</p>
+                        <p>Designed with <i class="fas fa-heart" style="color: #FF6584;"></i> and creativity</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+ <script>
+    // Single setLang function for language switching
+        function setLang(lang) {
+            // Update HTML direction and language attributes
+            document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+            document.documentElement.lang = lang;
+            
+            // Update document title
+            const titleElement = document.querySelector('title');
+            if (titleElement) {
+                const titleText = titleElement.getAttribute(`data-${lang}`);
+                if (titleText) {
+                    document.title = titleText;
+                }
+            }
+            
+            // Update all text elements with data attributes
+            const elementsToUpdate = document.querySelectorAll('[data-en], [data-ar]');
+            elementsToUpdate.forEach(element => {
+                const text = element.getAttribute(`data-${lang}`);
+                if (text) {
+                    // Handle special cases for elements with HTML
+                    if (element.classList.contains('hero-title')) {
+                        element.innerHTML = text;
+                    } else if (element.tagName === 'BUTTON' || element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                        // Update placeholder for form elements
+                        if (element.hasAttribute('placeholder')) {
+                            element.setAttribute('placeholder', text);
+                        } else {
+                            element.textContent = text;
+                        }
+                    } else if (element.classList.contains('footer-bottom') && element.tagName === 'P') {
+                        // Handle footer text with HTML
+                        element.innerHTML = text;
+                    } else {
+                        element.textContent = text;
+                    }
+                }
+            });
+            
+            // Update language button active state
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                if (btn.getAttribute('data-lang') === lang) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+            
+            // Save preference to localStorage
+            localStorage.setItem('preferredLang', lang);
+        }
+        
+        // Initialize language on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check for saved preference
+            const savedLang = localStorage.getItem('preferredLang');
+            
+            // Check browser language
+            const browserLang = navigator.language || navigator.userLanguage;
+            const browserLangCode = browserLang.split('-')[0];
+            
+            // Determine initial language
+            let initialLang = 'en'; // Default
+            if (savedLang) {
+                initialLang = savedLang;
+            } else if (browserLangCode === 'ar') {
+                initialLang = 'ar';
+            }
+            
+            // Set initial language
+            setLang(initialLang);
+            
+            // Add click event listeners to language buttons
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const lang = this.getAttribute('data-lang');
+                    setLang(lang);
+                });
+            });
+        });
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+        const lang = this.getAttribute('data-lang');
+        setLang(lang);
+    });
+ });
+
+    </script>
+<style>
+ .whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+     right: 20px;
+         width: 60px;
+            height: 60px;
+            background-color: #25D366;
+      color: #fff;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 30px;
+            line-height: 60px;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+        
+        [dir="rtl"] .whatsapp-float {
+            right: auto;
+            left: 20px;
+        }
+</style>
+</body>
+</html>
